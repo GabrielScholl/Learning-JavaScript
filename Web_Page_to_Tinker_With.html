@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <title>This is a title!</title>
+        <p>This is a paragraph.</p>
+        <!-- The following cloud be some inline JavaScript, but I called a funcion for clearer code -->
+        <button onclick="worldCreator()">Click me to create a wonderful world</button>
+        <title id="futureWorld"></title>
+        <!-- And now an embedded script -->
+        <script>
+            function worldCreator(){
+                // This comment is js-style because everything between script tags is
+                document.getElementById("futureWorld").innerHTML = "LOOK AT ME! I'M A WONDERFUL WORLD!!";
+            }
+        </script>
+        <!-- Below, calling a script from a file -->
+        <script src="texter.js"></script>
+    </body>
+</html>
