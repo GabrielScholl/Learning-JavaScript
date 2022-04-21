@@ -4,12 +4,18 @@
         <p>This is a paragraph.</p>
         <!-- The following cloud be some inline JavaScript, but I called a funcion for clearer code -->
         <button onclick="worldCreator()">Click me to create a wonderful world</button>
-        <title id="futureWorld"></title>
+        <p id="futureWorld"></p>
         <!-- And now an embedded script -->
         <script>
             function worldCreator(){
                 // This comment is js-style because everything between script tags is
-                document.getElementById("futureWorld").innerHTML = "LOOK AT ME! I'M A WONDERFUL WORLD!!";
+                try{
+                    document.getElementById("futureWorld").innerHTML =
+                    "LOOK AT ME! I'M A WONDERFUL WORLD!!";
+                }
+                catch(err){
+                    alert(err.message);
+                }
             }
         </script>
         <!-- Below, calling a script from a file -->
