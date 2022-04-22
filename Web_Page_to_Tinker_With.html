@@ -9,16 +9,32 @@
         <script>
             function worldCreator(){
                 // This comment is js-style because everything between script tags is
+                var futureMessage = document.getElementById("futureWorld");
                 try{
-                    document.getElementById("futureWorld").innerHTML =
-                    "LOOK AT ME! I'M A WONDERFUL WORLD!!";
+                    futureMessage.innerHTML = "LOOK AT ME! I'M A WONDERFUL WORLD!!!";
                 }
                 catch(err){
                     alert(err.message);
+                    futureMessage.innerHTML = err.message;
+                    throw "I can't throw errors";
                 }
             }
         </script>
         <!-- Below, calling a script from a file -->
         <script src="texter.js"></script>
+        <br>
+        <br>
+        <p>Input your number below:</p>
+        <input type="text" id="worldNum">
+        <button type="button" onclick="signCreator()">Create Sign</button>
+        <p id="errorDisplay"></p>
+        <h1 id="sign"></h1>
+        <script src="sign_creation.js"></script>
+        <br>
+        <br>
+        <h3 id="puneeText">SMALL TEXT</h3>
+        <button id="makeBig" onclick="sizer('puneeText','60px')">make it big</button>
+        <button id="makeSmall" onclick="sizer('puneeText','4px')">make it small</button>
+        <script src="text_sizer.js"></script>
     </body>
 </html>
